@@ -774,9 +774,9 @@ later = function() {
     }
     function compareFn(dir) {
       return dir === "next" ? function(a, b) {
-        return !b || a.getTime() > b.getTime();
+        return !b || new Date(a).getTime() > new Date(b).getTime();
       } : function(a, b) {
-        return !a || b.getTime() > a.getTime();
+        return !a || new Date(b).getTime() > new Date(a).getTime();
       };
     }
     function findNext(arr, compare) {
